@@ -16,7 +16,7 @@ function logger(req,res,next){
 }
 function checkPermission(para){
 return function innner(req,res,next){
-    if(para == "librarian" || para == "author"){
+    if(req.path == "/libraries" || req.path == "/authors"){
        req.permission = true;
     }
 
